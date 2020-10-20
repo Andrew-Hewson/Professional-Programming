@@ -1,0 +1,8 @@
+# pie chart data
+# Title will set the pie chart title, all other name value pairs are assumed to be chart data
+Title=I am a pie chart
+Test1=1
+Test2=2
+Test3=3
+Test4=4
+Test5=5
