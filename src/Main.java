@@ -16,7 +16,8 @@ import org.jfree.data.general.DefaultPieDataset;
 
 /**
  * @author Andrew Hewson
- * 22 Aug 2020
+ * @date 22 Aug 2020
+ * @version 1.0
  */
 public class Main extends JFrame implements Runnable {
    
@@ -48,7 +49,7 @@ public class Main extends JFrame implements Runnable {
     * @param dataFileName the name of the file to be parsed
     */
    private void initData(String dataFileName) {
-      System.out.println("Data init...");
+      log("Data init...");
       try {
          BufferedReader fin = new BufferedReader(new FileReader(dataFileName));
          String line = "";
@@ -84,7 +85,7 @@ public class Main extends JFrame implements Runnable {
          log("Error: IO Exception");
          e.printStackTrace();
       }
-      System.out.println("Data init complete.");
+      log("Data init complete.");
    }
    
    /**
