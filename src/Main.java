@@ -74,8 +74,12 @@ public class Main extends JFrame implements Runnable {
             try {
                value = Integer.parseInt(tokenize[1]);
             } catch (NumberFormatException e) {
-               log("Error: value needs to be integer => " + line);
+               log("Error: value needs to be integer - " + line);
                continue; // ignore malformed datum
+            }
+            if (value < 0) {
+               log("Error: value needs to be >= 0");
+               continue;
             }
             data.add(new Datum(name, value));
          }
@@ -148,7 +152,7 @@ public class Main extends JFrame implements Runnable {
 /**
  * A struct type class to hold a single data name value pair
  * @author Andrew Hewson
- * 22 Aug 2020
+ * @date 22 Aug 2020
  */
 class Datum {
    String name;
