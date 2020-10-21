@@ -26,6 +26,8 @@ public class Main extends JFrame implements Runnable {
    private String chartTitle = "Chart Title";
    private ChartPanel chartPanel;
    private final String CHART_DATA_FILE_NAME = "data.txt";
+   private final int CHART_MARGIN = 15;
+   private final String PANEL_TITLE = "Pie chart";
 
    /**
     * Main constructor
@@ -98,7 +100,10 @@ public class Main extends JFrame implements Runnable {
       }
       JFreeChart chart = ChartFactory.createPieChart3D(chartTitle, dataset, false, true, false);
       chartPanel = new ChartPanel(chart);
-      chartPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
+      chartPanel.setBorder(
+            BorderFactory.createEmptyBorder(
+                  CHART_MARGIN, CHART_MARGIN, CHART_MARGIN, CHART_MARGIN
+            ));
       chartPanel.setBackground(Color.WHITE);
    }
    
@@ -108,7 +113,7 @@ public class Main extends JFrame implements Runnable {
    private void initFrame() {
       add(chartPanel);
       pack();
-      setTitle("Pie chart");
+      setTitle(PANEL_TITLE);
       setLocationRelativeTo(null);
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
    }
